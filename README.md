@@ -37,7 +37,7 @@ FROM artist a
 JOIN artist_albums aa ON a.artist_id = aa.artist_id
 JOIN album_songs als ON aa.album_id = als.album_id
 JOIN song s ON als.song_id = s.song_id
-WHERE s.song_genre = 'Toddler';'''
+WHERE s.song_genre = 'Toddler';```
 
 ## Files in this Repository
 - SQL table creation and data insertion scripts  
