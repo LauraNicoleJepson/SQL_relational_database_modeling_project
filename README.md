@@ -27,7 +27,17 @@ The ERD diagram included in this repository illustrates the relationships betwee
 - Retrieved artists performing at specific events  
 - Analyzed playlist compositions and associated songs  
 - Queried user and subscription data tied to playlists  
-- Joined multiple tables to connect artists, albums, and songs  
+- Joined multiple tables to connect artists, albums, and songs
+
+## Example Query
+
+```sql
+SELECT artist_name, s.song_title, s.song_genre
+FROM artist a
+JOIN artist_albums aa ON a.artist_id = aa.artist_id
+JOIN album_songs als ON aa.album_id = als.album_id
+JOIN song s ON als.song_id = s.song_id
+WHERE s.song_genre = 'Toddler';
 
 ## Files in this Repository
 - SQL table creation and data insertion scripts  
